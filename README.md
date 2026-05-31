@@ -13,7 +13,11 @@ docker-compose up -d
 
 3. Example Continue plugin config for Visual Studio Code inside `./vscode/config.yaml`.
 
+4. Testing models
 
+| ![Image 1. Testing models. ](imgs/models.png) |
+|:--:|
+| *Image 1. Testing models.* |
 
 References:
 ==
