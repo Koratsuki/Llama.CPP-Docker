@@ -1,0 +1,23 @@
+---
+services:
+  llama:
+    image: ghcr.io/ggml-org/llama.cpp:full-vulkan
+    container_name: llama-server
+    ports:
+      - "8080:8080"
+    volumes:
+      - ./models:/models
+    devices:
+      - /dev/dri:/dev/dri
+    group_add:
+      - video
+    env_file: ./config/llamacpp.env
+    command: >
+      --server
+      --host 0.0.0.0
+      --port 8080
+      --models-dir /models
+      --models-autoload
+      --models-max 2
+      --gpu-layers 999
+      --ctx-size 8192

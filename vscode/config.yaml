@@ -1,0 +1,111 @@
+name: Local Config
+version: 1.0.0
+schema: v1
+models:
+  - name: Qwen2.5-Coder 3B (llama.cpp local) [1GB]
+    provider: openai
+    model: Qwen2.5-Coder-3B-Instruct-Q4_K_M
+    apiBase: http://localhost:8080/v1
+    apiKey: dummy
+    completionOptions:
+      temperature: 0.2
+      maxTokens: 4096
+    roles:
+      - chat
+      - edit
+      - apply
+  - name: DeepSeek R1 Distill Llama 8B (llama.cpp local) [8GB]
+    provider: openai
+    model: DeepSeek-R1-Distill-Llama-8B-Abliterated.Q8_0
+    apiBase: http://localhost:8080/v1
+    apiKey: dummy
+    completionOptions:
+      temperature: 0.6
+      maxTokens: 8192
+    roles:
+      - chat
+      - edit
+      - apply
+  - name: Qwen2.5-Coder 7B (llama.cpp local) [4GB]
+    provider: openai
+    model: qwen2.5-coder-7b-instruct-q4_k_m
+    apiBase: http://localhost:8080/v1
+    apiKey: dummy
+    completionOptions:
+      temperature: 0.2
+      maxTokens: 4096
+    roles:
+      - chat
+      - edit
+      - apply
+  - name: Qwen3.5 9B (llama.cpp local) [5GB]
+    provider: openai
+    model: qwen3.5-9b-q4_k_m
+    apiBase: http://localhost:8080/v1
+    apiKey: dummy
+    completionOptions:
+      temperature: 0.2
+      maxTokens: 4096
+    roles:
+      - chat
+      - edit
+      - apply
+  - name: Ministral 3B (llama.cpp local) [2GB]
+    provider: openai
+    model: Ministral-3-3B-Instruct-2512-Q4_K_M
+    apiBase: http://localhost:8080/v1
+    apiKey: dummy
+    completionOptions:
+      temperature: 0.2
+      maxTokens: 4096
+    roles:
+      - chat
+      - edit
+      - apply
+  - name: Qwen2.5.1-Coder 14B (llama.cpp local) [8GB]
+    provider: openai
+    model: Qwen2.5.1-Coder-14B-Instruct-Q4_K_M
+    apiBase: http://localhost:8080/v1
+    apiKey: dummy
+    completionOptions:
+      temperature: 0.2
+      maxTokens: 4096
+    roles:
+      - chat
+      - edit
+      - apply
+  - name: Ministral 14B Reasoning (llama.cpp local) [8GB]
+    provider: openai
+    model: ministral-3-14b-reasoning-2512-q4_k_m
+    apiBase: http://localhost:8080/v1
+    apiKey: dummy
+    completionOptions:
+      temperature: 0.6
+      maxTokens: 8192
+    roles:
+      - chat
+      - edit
+      - apply
+  - name: Qwen2.5-Coder 14B (llama.cpp local) [8GB]
+    provider: openai
+    model: qwen2.5-coder-14b-instruct-q4_k_m
+    apiBase: http://localhost:8080/v1
+    apiKey: dummy
+    completionOptions:
+      temperature: 0.2
+      maxTokens: 4096
+    roles:
+      - chat
+      - edit
+      - apply
+tabAutocompleteModel:
+  title: Qwen2.5-Coder 1.5B base (autocomplete) [0GB]
+  provider: openai
+  model: qwen2.5-coder-1.5b-q4_k_m
+  apiBase: http://localhost:8080/v1
+  apiKey: dummy
+experimental:
+  enableEditTool: true
+  enableAgentMode: true
+  planMode: true
+  useDiffBasedEdits: true
