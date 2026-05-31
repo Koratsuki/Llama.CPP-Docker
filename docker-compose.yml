@@ -3,6 +3,11 @@ services:
   llama:
     image: ghcr.io/ggml-org/llama.cpp:full-vulkan
     container_name: llama-server
+    healthcheck:
+      test: ["CMD", "curl", "-f", "http://localhost:8080/health"]
+      interval: 15s
+      timeout: 10s
+      retries: 3
     ports:
       - "8080:8080"
     volumes:
