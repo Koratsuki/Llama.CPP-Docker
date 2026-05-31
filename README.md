@@ -27,3 +27,5 @@ References:
 [2] https://github.com/ggml-org/llama.cpp#obtaining-and-quantizing-models
 
 [3] https://coffeejourneys.blog/home-lab-local-llms-docker-amd/
+
+[4] https://dev.to/hrodrig/21-toks-gemma-4-on-a-ryzen-mini-pc-llamacpp-vulkan-and-the-messy-truth-about-local-chat-m82
