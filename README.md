@@ -25,3 +25,5 @@ References:
 [1] https://github.com/ggml-org/llama.cpp/blob/master/docs/docker.md
 
 [2] https://github.com/ggml-org/llama.cpp#obtaining-and-quantizing-models
+
+[3] https://coffeejourneys.blog/home-lab-local-llms-docker-amd/
