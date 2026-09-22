@@ -3,22 +3,22 @@ Llama.CPP in Docker and config for VSCode Continue plugin
 
 Note: **I'm just testing. This is highly experimental!**
 
-## Hardware recomendado
+## Recommended hardware
 
-Modelos orientados a laptops con **~16GB de RAM libre** y GPU integrada (iGPU) que
-comparte la memoria del sistema. Probado en: Ryzen 5 5500U + Radeon Vega 7 + 30GB RAM.
+Models targeted at laptops with **~16GB of free RAM** and integrated GPU (iGPU) that
+shares system memory. Tested on: Ryzen 5 5500U + Radeon Vega 7 + 30GB RAM.
 
-- Con `--gpu-layers` la iGPU se usa vía Vulkan (muy útil para modelos <=14B).
-- Evita modelos >10GB de pesos si tienes poca RAM libre: la iGPU no tiene VRAM propia
-  y todo se mapea a la RAM del sistema.
+- With `--gpu-layers` the iGPU is used via Vulkan (very useful for models <=14B).
+- Avoid models >10GB of weights if you have little free RAM: the iGPU has no dedicated VRAM
+  and everything is mapped to system RAM.
 
-## Modelos incluidos
+## Included models
 
 | Archivo | Tamaño | Uso |
 |---|---|---|
-| `qwen2.5-coder-1.5b-instruct-q4_k_m.gguf` | 1.1GB | Autocompletado (VSCode) |
-| `qwen2.5-coder-7b-instruct-q4_k_m.gguf` | 4.7GB | Código / edición / chat |
-| `Qwen3-8B-Q4_K_M.gguf` | 5.0GB | Chat general / agente |
+| `qwen2.5-coder-1.5b-instruct-q4_k_m.gguf` | 1.1GB | Autocomplete (VSCode) |
+| `qwen2.5-coder-7b-instruct-q4_k_m.gguf` | 4.7GB | Code / edit / chat |
+| `Qwen3-8B-Q4_K_M.gguf` | 5.0GB | General chat / agent |
 
 ## Uso
 
@@ -29,7 +29,7 @@ comparte la memoria del sistema. Probado en: Ryzen 5 5500U + Radeon Vega 7 + 30G
 ./download-models.sh
 ```
 
-   (coloca archivos `.gguf` en `./models` si lo prefieres manualmente)
+   (place `.gguf` files in `./models` if you prefer to do it manually)
 2. Run:
 
 ```bash
@@ -40,7 +40,7 @@ docker-compose up -d
 
 ```bash
 curl http://localhost:8080/health
-# {"status":"ok", ...}  o carga del modelo en curso
+# {"status":"ok", ...}  or model loading in progress
 ```
 
 4. Example Continue plugin config for Visual Studio Code inside `./vscode/config.yaml`.
@@ -53,10 +53,10 @@ curl http://localhost:8080/health
 
 ## Tips
 
-- El nombre del modelo en la API es el **nombre del archivo sin `.gguf`** (p.ej.
-  `qwen2.5-coder-7b-instruct-q4_k_m`). Si renombras archivos, ajusta `vscode/config.yaml`.
-- Si el contenedor no acelera por GPU, revisa los logs con `docker-compose logs llama`
-  (Vulkan debe aparecer como backend). Con una sola iGPU el device es `0`.
+- The model name in the API is the **file name without `.gguf`** (e.g.
+  `qwen2.5-coder-7b-instruct-q4_k_m`). If you rename files, adjust `vscode/config.yaml`.
+- If the container doesn't speed up via GPU, check the logs with `docker-compose logs llama`
+  (Vulkan should appear as the backend). With a single iGPU the device is `0`.
 
 References:
 ==
