@@ -20,7 +20,7 @@ shares system memory. Tested on: Ryzen 5 5500U + Radeon Vega 7 + 30GB RAM.
 | `qwen2.5-coder-7b-instruct-q4_k_m.gguf` | 4.7GB | Code / edit / chat |
 | `Qwen3-8B-Q4_K_M.gguf` | 5.0GB | General chat / agent |
 
-## Uso
+## Usage
 
 0. Install [Docker+Docker-Compose](https://gist.github.com/Koratsuki/cb4e065e8fe7ad3ea3cf34df9bd25c94).
 1. Download the models:
