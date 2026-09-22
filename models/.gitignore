@@ -1,0 +1,3 @@
+# Ignore model files (download via ./download-models.sh)
+*.gguf
+*.safetensors
